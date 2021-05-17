@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Products</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction(0)" placeholder="Filter Product name.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th onclick="sortTable(0)" style="width:20%;">Product</th>
+    <th onclick="sortTable(1)" style="width:20%;">Shop</th>
+    <th onclick="sortTable(2)" style="width:20%;">Price</th>
+    <th onclick="sortTable(3)" style="width:20%;">Price Per 1KG</th>
+    <th style="width:20%;">URL</th>
+  </tr>
