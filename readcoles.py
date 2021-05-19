@@ -14,6 +14,8 @@ def processColes(file):
             try:
                 name = div.find("span", {"class": "product-name"}).get_text()
                 url = div.find("a").get('href')
+                if "https" not in url:
+                    url="https://shop.coles.com.au"+url
                 print(name)
                 print(url)
                 dollar = div.find("span", {"class": "dollar-value"}).get_text()

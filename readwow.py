@@ -14,6 +14,8 @@ def processWow(file):
             #print(div)
             name = div.find("a", {"class": "shelfProductTile-descriptionLink"}).get_text()
             url = div.find("a", {"class": "shelfProductTile-descriptionLink"}).get('href')
+            if "https" not in url:
+                    url="https://www.woolworths.com.au"+url
             print(name)
             print(url)
             try:

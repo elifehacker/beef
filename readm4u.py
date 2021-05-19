@@ -14,6 +14,8 @@ def processM4U(file):
             title = div.find("div",{"class": "item-title"})
             name = title.find("a").get_text().encode("ascii", errors="ignore").decode()
             url = title.find("a").get('href')
+            if "https" not in url:
+                url="https://www.meat4u.com.au/"+url
             print(name)
             print(url)
             try:
