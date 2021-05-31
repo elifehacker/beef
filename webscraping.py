@@ -5,11 +5,11 @@ from readcoles import processColes
 from readhf import processHF
 from readmm import processMM
 from readm4u import processM4U
-from master import makeReport
+from report import makeReportfromList
 
 driver = webdriver.Chrome(executable_path=r"F:/downloads/chromedriver_win32/chromedriver.exe")
 
-with open('webs.txt', 'r') as webs:
+with open('webs_pork.txt', 'r') as webs:
     counter =1
     for l in webs:
         print(l)
@@ -19,4 +19,5 @@ with open('webs.txt', 'r') as webs:
         with open('webs\\'+name, 'w', encoding='utf-8') as f:
             f.write(driver.page_source)
         counter+=1
-makeReport()
+with open('webs_pork.txt', 'r') as webs:
+    makeReportfromList(webs)
